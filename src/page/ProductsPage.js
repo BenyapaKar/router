@@ -64,14 +64,25 @@ const ProductsPage = () => {
 
 export default ProductsPage;
 
+export const productsLoader = async ()  => {
+  // const res = await getProducts();
+  const products = await fetch('/products') 
+  // const products = await fetch('/productsx') 
+  if  (!products.ok) {
+    throw Error('Could not fetch the products') 
+  }
+  return products;
+};
+
 // export const productsLoader = async () => {
 //   const res = await getProducts();
 //   return res;
 // };
-export async function productsLoader({ request }) {
-  const url = new URL(request.url);
-  const q = url.searchParams.get("q");
 
-  const products = await getProducts(q);
-  return products;
-}
+// export async function productsLoader({ request }) {
+//   const url = new URL(request.url);
+//   const q = url.searchParams.get("q");
+
+//   const products = await getProducts(q);
+//   return products;
+// }

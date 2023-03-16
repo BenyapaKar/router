@@ -39,7 +39,19 @@ const ProductDetailPage = () => {
 };
 export default ProductDetailPage;
 
-export async function loader({ params }) {
-  const res = await getProduct(params.id);
-  return res;
-}
+// export async function loader({ params }) {
+//   const res = await getProduct(params.id);
+//   return res;
+// }
+
+export const loader = async ({ params }) => { 
+  const { id } = params;
+  const res = await fetch('/products/' + params.id)
+
+  let   product = await res.json();
+
+  if  (!res.ok) {
+    throw Error(product.error)
+  }
+  return product //res.json()
+};  
