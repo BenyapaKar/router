@@ -16,6 +16,7 @@ import ProductsPage, { productsLoader }  from "./page/ProductsPage";
 import ProductDetailPage, {loader as detailLoader} from "./page/ProductDetailPage";
 import ErrorPage from "./component/ErrorPage";
 import NotFound from "./component/NotFound";
+import Todo from "./page/Todo";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
         <Route path=":id" element={<ProductDetailPage />} loader={detailLoader} />
       </Route>
       <Route path="about" element={<About />} />
+      <Route path="todo" element={<Todo />} />
     </Route>
   )
 );

@@ -7,6 +7,7 @@ const MainLayout = () => {
         <NavLink to="/">Home</NavLink>&nbsp;
         <NavLink to="/products">Product</NavLink>&nbsp;
         <NavLink to="/about">About us</NavLink>&nbsp;
+        <NavLink to="/todo">Todo</NavLink>&nbsp;
       </nav>
       <div className="container">
         <Outlet /> {/* your content will be shown in the Outlet */}
